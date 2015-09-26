@@ -1,0 +1,100 @@
+.nav
+  margin: 0 
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 3
+  
+  ul
+    margin: 0 
+  li
+    list-style-type: none
+    display: block
+    cursor: pointer
+    margin: 0 
+    
+    a
+      color: $dark-grey
+      font-size: em($h3)
+  
+  .top-nav
+    margin: 0
+    border-bottom: 1px solid #000
+    background: $grey
+    cf()
+     
+    li
+      span(1/4) 
+      border-left: 1px solid #000
+      list-style-type: none
+      text-align: center
+      display: block
+      height: $nav-height
+      line-height: $nav-height
+      cursor: pointer
+      position: relative
+      
+      a
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        display: block
+      
+      &.burger
+        font-size: em($h3)
+      &:first-of-type
+        border-left: 0
+          
+.side-nav
+  display: none
+  width: 100%
+  left: 0
+  top: 0
+  height: 100%
+  position: fixed
+  
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 0
+    opacity: 0.8
+    background: #000
+  
+  .close
+    position: absolute
+    z-index: 2
+    right: 20px
+    font-size: em($h3)
+    text-transform: uppercase
+    top: 20px
+    color: $dark-grey
+    cursor: pointer
+    
+  ul
+    position: absolute
+    width: 80%
+    height: 100%
+    top: 0
+    right: 0
+    padding: 30px
+    z-index: 1
+    border-left: 1px solid #000
+    background: #fff
+
+  li
+    margin-bottom: 15px
+    
+    a
+      font-size: em($h3)
+
+
+.show-side-nav
+  .side-nav
+    display: block
