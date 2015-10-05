@@ -8,188 +8,22 @@ html.no-js
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='styles/main.min.css')
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css")
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css')
     //- link(rel='stylesheet', href='styles/libs.min.css')
 
   body
 
     #route-wrapper.show-home
-
-      .nav
-        ul.top-nav
-          li 
-            a(href="#home") 
-              i.zmdi.zmdi-home
-          li 
-            a(href="#list-item") 
-              i.zmdi.zmdi-plus-circle-o
-          li 
-            a(href="#my-items")
-              i.zmdi.zmdi-view-dashboard
-
-          li.burger
-            i.zmdi.zmdi-menu
-            a(href="#side-nav")
-
-        .side-nav
-          ul
-            li 
-              a.side-menu-item(href="#search")
-                i.zmdi.zmdi-search &nbsp;Search
-            li 
-              a.side-menu-item(href="#profile") 
-                i.zmdi.zmdi-account &nbsp;My Profile
-            li 
-              a.side-menu-item(href="#settings")
-                i.zmdi.zmdi-settings &nbsp;Settings
-
-          a.close(href="javascript:void(0)") 
-            i.zmdi.zmdi-close-circle
-
-      .home-view.view
-
-        ul.new-items-list
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Lawn Mower
-              span.price $25/day
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Kettle
-              span.price $5/day
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Skateboard
-              span.price $15/day
-            
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Phone
-              span.price $10/day
-            
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title title
-              span.price $10/day
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Lawn Mower
-              span.price $25/day
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Kettle
-              span.price $5/day
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Skateboard
-              span.price $15/day
-            
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Phone
-              span.price $10/day
-            
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title title
-              span.price $10/day
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Lawn Mower
-              span.price $25/day
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Kettle
-              span.price $5/day
-
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Skateboard
-              span.price $15/day
-            
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title Phone
-              span.price $10/day
-            
-          li
-            a(href="#single-item")
-
-              span.listing-img
-              span.title title
-              span.price $10/day
-            
-
-      .list-item-view.view
-
-        h1 list new item
-
-      .my-items-view.view
-
-        h1 my items
-
-      .single-item-view.view
-
-        h1 Lawn Mower
-        
-        span.listing-img
-          i.zmdi.zmdi-chevron-left.left.color-changer
-          i.zmdi.zmdi-chevron-right.right.color-changer
-
-        p This is a great lawnmower.
-        p $10/day
-        
-        .buttons
-          a.item-button(href="") Rent this item
-          a.item-button(href="") Contact Seller
-
-
-      .search-view.view
-
-        h1 search view
       
-      .profile-view.view
+      include pages/nav.jade
+  
+      include pages/home.jade
+      
+      include pages/single-item.jade
 
-        h1 profile
-
-      .settings-view.view
-        
-        h1 settings view
+      include pages/profile.jade
+      
+      include pages/settings.jade
 
 
 

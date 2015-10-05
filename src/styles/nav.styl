@@ -6,6 +6,11 @@
   width: 100%
   z-index: 3
   
+  .nav-inner
+    // max-width: 1280px
+    margin: 0 auto
+    width: 100%
+    
   ul
     margin: 0 
   li
@@ -20,23 +25,20 @@
   
   .top-nav
     margin: 0
-    border-bottom: 1px solid #000
-    background: $grey
     cf()
+    width: 100%
      
     li
-      span(1/4) 
-      border-left: 1px solid #000
+      margin-left: 20px
+      display: inline-block
       list-style-type: none
       text-align: center
-      display: block
       height: $nav-height
       line-height: $nav-height
       cursor: pointer
       position: relative
       
       a
-        position: absolute
         width: 100%
         height: 100%
         top: 0
@@ -45,6 +47,8 @@
       
       &.burger
         font-size: em($h3)
+        float: right
+        margin-right: 20px
       &:first-of-type
         border-left: 0
           

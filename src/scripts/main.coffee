@@ -4,18 +4,21 @@ Main = (()->
     $(window).on 'hashchange', onHashChange
     onHashChange()
 
+    resizeHome()
+    $(window).on 'resize', ->
+      resizeHome()
+
     $(document).on 'click', '.burger', (e) ->
       e.preventDefault()
       $('#route-wrapper').addClass('show-side-nav')
 
     $(document).on 'click', '.color-changer', ->
       $(this).parent().css('background-color', getRandomColor())
+
     $(document).on 'click', '.close, .side-menu-item', () ->
       $('.show-side-nav').removeClass('show-side-nav')
 
-    $('.listing-img').each (index, element) => 
-
-      $(element).css('background-color', getRandomColor())
+    $('.coloured').css('background-color', getRandomColor())
 
   onHashChange = () ->
     hash = window.location.hash.replace('#', '')
@@ -25,14 +28,6 @@ Main = (()->
     switch (hash)
       when "home"
         $('#route-wrapper').attr('class', 'show-home')
-      when "list-item"
-        $('#route-wrapper').attr('class', 'show-list-item')
-      when "my-items"
-        $('#route-wrapper').attr('class', 'show-my-items')
-      when "feed"
-        $('#route-wrapper').attr('class', 'show-feed')
-      when "search"
-        $('#route-wrapper').attr('class', 'show-search')
       when "profile"
         $('#route-wrapper').attr('class', 'show-profile')
       when "settings"
@@ -41,7 +36,7 @@ Main = (()->
         $('#route-wrapper').attr('class', 'show-single-item')
       
       else
-        console.log 'nothing'
+        console.log 'noselection'
 
   getRandomColor = ->
     console.log 'yo'
@@ -52,6 +47,13 @@ Main = (()->
       color += letters[Math.floor(Math.random() * 16)]
       i++
     color
+
+  resizeHome = () ->
+    newHeight = (Math.floor($(window).height()*0.7))
+    if newHeight < 350
+      newHeight = 350
+    $('.home-hero').css('height', newHeight+'px')
+
 
   return {
     init: init,
