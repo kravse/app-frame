@@ -18,7 +18,9 @@ Main = (()->
     $(document).on 'click', '.close, .side-menu-item', () ->
       $('.show-side-nav').removeClass('show-side-nav')
 
-    $('.coloured').css('background-color', getRandomColor())
+    $('.coloured').each( ->
+      $(this).css('background-color', getRandomColor())
+    )
 
   onHashChange = () ->
     hash = window.location.hash.replace('#', '')
